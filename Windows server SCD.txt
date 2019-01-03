@@ -1,0 +1,256 @@
+#mention the varible in below line where you want to store file location of script */
+
+$x = "C:\bin\out.txt"
+$x1 = "C:\bin\grouppolicy.xml"
+
+Get-GPOReport -All -ReportType xml -Path $x1
+
+
+#echo "C1" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "1" | Out-File C:\bin\out.txt -Append 
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa -Name "LimitBlankPasswordUse" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+#echo "2.3.4.1" | Out-File C:\bin\out.txt -Append 
+#Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' | Out-File $x -Append 
+#Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -name "AllocateDASD" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "2 to 3" | Out-File C:\bin\out.txt -Append 
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa | Out-File $x -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa -Name "SCENoApplyLegacyAudit" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+#echo "2.3.2.2" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa -Name "CrashOnAuditFail" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "4" | Out-File C:\bin\out.txt -Append
+echo "search this parameter AllocateDASD in the output of C2 " | Out-File C:\bin\out.txt -Append 
+#Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -Name "AllocateDASD" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "5" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers' | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Print\Providers\LanMan Print Services\Servers -Name "AddPrinterDrivers" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.5 Domain controller(Valid Only for Domain Controller)" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "6" | Out-File C:\bin\out.txt -Append
+#echo "search this parameter in output of 2.3.2.1 to 2.3.2.2" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa -Name "SubmitControl" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "7 valid only for Domain control not for member server" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NTDS\Parameters -Name "LDAPServerIntegrity" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append 
+
+echo "8 valid only for Domain control not for member server" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters -Name "RefusePasswordChange" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append 
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.6 Domain member" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "9 to 12" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+#echo "2.3.6.1" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters -Name "RequireSignOrSeal" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+#echo "2.3.6.2" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters -Name "SealSecureChannel" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+#echo "2.3.6.3" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters -Name "SignSecureChannel" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append 
+#echo "2.3.6.4" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Netlogon\Parameters -Name "DisablePasswordChange" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.7 Interactive logon" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "15 to 19" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+
+
+#echo "2.3.7.1" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "DontDisplayLastUserName" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "2.3.7.2" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "DisableCAD" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "2.3.7.3" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "InactivityTimeoutSecs" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "2.3.7.4" | Out-File C:\bin\out.txt -Append 
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "LegalNoticeText" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "2.3.7.5" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -Name "LegalNoticeText" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "20 to 23" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.8 Microsoft network client" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "24 to 26" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanmanWorkstation\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.9 Microsoft network server" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "27 to 31" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.10 Network access" | Out-File $x -Append
+echo "33 to 36 check this in the output of 2.3.2.1 to 2.3.2.2" | Out-File $x -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "38" | Out-File $x -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SecurePipeServers\Winreg\AllowedExactPaths | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "40 to 41" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "2.3.11 Network security" | Out-File $x -Append
+
+echo "42" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "43" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0 | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "44" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\pku2u | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "45" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System\Kerberos\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "46" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "47" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LanManServer\Parameters | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "48" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "49" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\LDAP | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "50" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0 | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "51" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Lsa\MSV1_0 | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "Shutdown" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "52" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "System objects" | Out-File C:\bin\out.txt -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "53" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Kernel' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "54" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager' -name "ProtectionMode" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "User Account Control" | Out-File C:\bin\out.txt -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "55 to 63" | Out-File C:\bin\out.txt -Append
+Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+#echo "2.3.17.2" | Out-File C:\bin\out.txt -Append
+#Get-ItemProperty Registry::HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System -name "EnableUIADesktopToggle" | Out-File $x -Append
+#echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "Account Management" "(Group policy)"| Out-File C:\bin\out.txt -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "Local Administrator Password Solution (LAPS)" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "64" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\GPExtensions\{D76B9641-3288-4f75-942D-087DE603E3EA}' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "65 to 69" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft Services\AdmPwd' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+echo "Microsoft Solutions for Security(MSS) (Legacy)" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+
+echo "70" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon' -name "AutoAdminLogon" | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "71" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip6\Parameters' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "72 to 75" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
+echo "76" | Out-File $x -Append
+Get-ItemProperty Registry::'HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NetBT\Parameters' | Out-File $x -Append
+echo "--------------------------------------------------------------------------------------------" | Out-File $x -Append
+
